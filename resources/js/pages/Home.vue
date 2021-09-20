@@ -42,7 +42,7 @@
                 </div>
                 <!-- Card footer -->
                 <div class="card-footer bg-transparent border-secondary text-white d-flex justify-content-between align-items-center my_card_footer">
-                    <a href="#" class="btn">Read</a>
+                    <router-link :to="{name:'post-detail', params:{slug:post.slug}}" class="btn">Read</router-link>
                     <div class="likeAndSave">
                         <i class="bi bi-heart-fill mx-3"></i>
                         <i class="bi bi-save2"></i>

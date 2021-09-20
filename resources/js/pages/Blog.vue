@@ -2,12 +2,18 @@
   <main>
     <div class="container my_container">
       <div class="row">
+
+        <!-- start LEFT COLUMN -->
         <div class="col-8">
+
           <!-- ALL POST(DISPLAYED 4 per PAGE) -->
-          <div class="row row-cols-1 py-5 pb-3">
+          <div class="row row-cols-1 py-4 pb-3">
             <div class="col my-4" v-for="post in posts" :key="post.id">
+
+              <!-- start CARD -->
               <div class="card border-secondary mb-3 h-100 my_card ">
-                <!-- Card Header -->
+
+                <!-- start Card Header -->
                 <div class="card-header border-secondary d-flex justify-content-between align-items-center my_card_header">
                   <div class="author">
                     <i class="bi bi-person-circle"></i>
@@ -15,7 +21,9 @@
                   </div>
                   <i class="bi bi-share"></i>
                 </div>
-                <!-- Card Body -->
+                <!-- end Card Body -->
+
+                <!-- start Card Body -->
                 <div class="card-body my_card_body">
                   <h5 class="card-title h-25">{{post.title}}</h5>
                   <p class="card-text">{{truncate(post.content, 150)}}</p>
@@ -23,7 +31,9 @@
                     <span class="date_post">Posted on: {{formatDate(post.created_at)}}</span>
                   </div>
                 </div>
-                <!-- Card footer -->
+                <!-- end Card Body -->
+
+                <!-- start Card footer -->
                 <div class="card-footer bg-transparent border-secondary text-white d-flex justify-content-between align-items-center my_card_footer">
                   <router-link :to="{name:'post-detail', params:{slug:post.slug}}" class="btn">Read</router-link>
                   <div class="likeAndSave">
@@ -31,7 +41,11 @@
                     <i class="bi bi-save2"></i>
                   </div>
                 </div>
+                <!-- end Card footer -->
+
               </div>
+              <!-- end CARD -->
+
             </div>
           </div>
 
@@ -59,7 +73,13 @@
           </div>
 
         </div>
-        <div class="col-4"></div>
+        <!-- end LEFT COLUMN -->
+
+        <!-- start RIGHT COLUMN -->
+        <div class="col-4">
+        </div>
+        <!-- end RIGHT COLUMN -->
+
       </div>
   </div>
   </main>
@@ -141,6 +161,7 @@ main{
   overflow: hidden;
   .my_container{
     background-color: hsla(243, 100%, 4%, 0.7);
+
     .my_card{
       background-image: linear-gradient(225deg, #eee 0%, #ede8ff 30%, #d6cef2 75%, #b3a2ee 100% );
       background-color: #ede8ff;
@@ -225,9 +246,7 @@ main{
       }
     }
     
-
     .navigation_posts{
-        
       li{
         button{
           color:#044BD9;

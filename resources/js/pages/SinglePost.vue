@@ -16,8 +16,11 @@
                         <div class="card-body my_card_body">
                             <h5 class="card-title h-25">{{post.title}}</h5>
                             <p class="card-text">{{post.content}}</p>
+                            <div class="post_tags" v-if="post.tags">
+                                <span v-for="(tag,index) in post.tags" :key="index">#{{tag.name}}</span>
+                            </div>
                             <div class="post_date">
-                            <span class="date_post">Posted on: {{formatDate(post.created_at)}}</span>
+                                <span class="date_post">Posted on: {{formatDate(post.created_at)}}</span>
                             </div>
                         </div>
                         <!-- Card footer -->
@@ -31,6 +34,7 @@
                     </div>
                 </div>
             </div>
+            <router-link :to="{name:'blog'}" class="btn btn-light my-4">Go Back</router-link>
         </div>
     </main>
 </template>
@@ -159,6 +163,10 @@ main{
                 p{
                     color:#1D0259;;
                     transition:all 0.3s ease-in;
+                }
+
+                .post_tags{
+                    color: #5852F2;
                 }
 
                 .post_date{
