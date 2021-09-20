@@ -81,7 +81,6 @@
 
 <script>
 export default {
-    name:'Main',
     data(){
         return {
             url:'http://localhost:8000/api/posts',
@@ -143,11 +142,8 @@ export default {
 
         }
     }
-
-
-
-
 }
+
 </script>
 
 <style lang="scss" scoped>

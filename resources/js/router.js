@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 import Home from './pages/Home.vue';
 import Blog from './pages/Blog.vue';
+import SinglePost from './pages/SinglePost';
 import Contacts from './pages/Contacts.vue';
 
 const router = new VueRouter({
@@ -19,6 +20,11 @@ const router = new VueRouter({
             path: '/blog',
             name: 'blog',
             component: Blog,
+        },
+        {
+            path: '/post/:slug',
+            name: 'post-detail',
+            component: SinglePost,
         },
         {
             path: '/contacts',

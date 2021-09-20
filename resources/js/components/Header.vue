@@ -3,7 +3,11 @@
         <div class="container">
 
             <!-- LOGO -->
-            <a class="navbar-brand" href="#">Boolpress</a>
+            <div class="logo_box">
+                <router-link class="navbar-brand" :to="{name:'home'}">
+                    <img :src="'/img/BOOLPRESS.png'" class="logo">
+                </router-link>
+            </div>
 
             <!-- TOGGLE -->
             <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,6 +59,13 @@ export default {
 nav{
     background-color: #000014;
     font-size: 16px;
+
+    .logo_box{
+        width: 150px;
+        img{
+            width:100%;
+        }
+    }
    
 }
 
