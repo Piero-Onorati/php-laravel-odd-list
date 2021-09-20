@@ -97,7 +97,7 @@ main{
     width: 100%;
     overflow: hidden;
     .my_container{
-        background-color: hsla(243, 100%, 4%, 0.7);
+        background-color: hsla(243, 100%, 4%, 0.8);
         min-height:100vh;
         .my_card{
            
@@ -167,6 +167,12 @@ main{
 
                 .post_tags{
                     color: #5852F2;
+                    span{
+
+                        &:hover{
+                            cursor: context-menu;
+                        }
+                    }
                 }
 
                 .post_date{
