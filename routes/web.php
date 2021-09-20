@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')
-->name('homepage');
+
 
 Auth::routes();
 
@@ -29,3 +28,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     Route::resource('/posts', 'PostController');
 });
+
+
+Route::get('/{any?}', 'HomeController@index')->where('any', '.*');

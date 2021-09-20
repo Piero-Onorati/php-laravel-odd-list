@@ -13,14 +13,12 @@
             <!-- NAVBAR -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                    <li class="nav-item" v-for="(link,index) in navMenu" :key="index">
+                        <router-link class="nav-link" aria-current="page"
+                            :to="{ name:link.routeName }"
+                        >
+                            {{link.label}}
+                        </router-link>
                     </li>
                 </ul>
             </div>
@@ -30,7 +28,25 @@
 
 <script>
 export default {
-    name:'Header'
+    name:'Header',
+    data(){
+        return{
+            navMenu:[
+                {
+                    label:'Home',
+                    routeName:'home'
+                },
+                {
+                    label:'Blog',
+                    routeName:'blog'
+                },
+                {
+                    label:'Contacts',
+                    routeName:'contacts'
+                }
+            ]
+        }
+    }
 
 }
 </script>

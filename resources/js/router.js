@@ -3,6 +3,10 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
+import Home from './pages/Home.vue';
+import Blog from './pages/Blog.vue';
+import Contacts from './pages/Contacts.vue';
+
 const router = new VueRouter({
     mode: 'history',
     routes: [
@@ -12,9 +16,14 @@ const router = new VueRouter({
             component: Home
         },
         {
-            path: '/hello',
-            name: 'hello',
-            component: Hello,
+            path: '/blog',
+            name: 'blog',
+            component: Blog,
+        },
+        {
+            path: '/contacts',
+            name: 'contacts',
+            component: Contacts,
         },
     ],
 });
